@@ -1,0 +1,327 @@
+Here's a basic boilerplate code setup for the major components and pages in your Food Ordering System React project. This will help you scaffold the project quickly.
+
+
+---
+
+🔧 App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './Home';
+
+import Login from './components/Login';
+import Register from './components/Register';
+import Restaurants from './components/Restaurants';
+import PopularRestaurants from './components/PopularRestaurants';
+
+import Admin from './pages/admin/Admin';
+import AllOrders from './pages/admin/AllOrders';
+import AllProducts from './pages/admin/AllProducts';
+import AllRestaurants from './pages/admin/AllRestaurants';
+import AllUsers from './pages/admin/AllUsers';
+
+import Cart from './pages/customer/Cart';
+import CategoryProducts from './pages/customer/CategoryProducts';
+import IndividualRestaurant from './pages/customer/IndividualRestaurant';
+import Profile from './pages/customer/Profile';
+
+import EditProduct from './pages/restaurant/EditProduct';
+import NewProduct from './pages/restaurant/NewProduct';
+import RestaurantHome from './pages/restaurant/RestaurantHome';
+import RestaurantMenu from './pages/restaurant/RestaurantMenu';
+import RestaurantOrders from './pages/restaurant/RestaurantOrders';
+import Authentication from './pages/restaurant/Authentication';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        {/* Auth */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Admin */}
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/orders" element={<AllOrders />} />
+        <Route path="/admin/products" element={<AllProducts />} />
+        <Route path="/admin/restaurants" element={<AllRestaurants />} />
+        <Route path="/admin/users" element={<AllUsers />} />
+
+        {/* Customer */}
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/categories/:categoryId" element={<CategoryProducts />} />
+        <Route path="/restaurant/:id" element={<IndividualRestaurant />} />
+        <Route path="/profile" element={<Profile />} />
+
+        {/* Restaurant */}
+        <Route path="/restaurant/home" element={<RestaurantHome />} />
+        <Route path="/restaurant/menu" element={<RestaurantMenu />} />
+        <Route path="/restaurant/orders" element={<RestaurantOrders />} />
+        <Route path="/restaurant/edit-product/:id" element={<EditProduct />} />
+        <Route path="/restaurant/new-product" element={<NewProduct />} />
+        <Route path="/restaurant/auth" element={<Authentication />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
+
+
+---
+
+🌟 Sample Component: Navbar.jsx
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
+  return (
+    <nav>
+      <h2>SB Foods</h2>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/restaurants">Restaurants</Link></li>
+        <li><Link to="/cart">Cart</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+---
+
+🏠 Home.jsx
+
+import React from 'react';
+import Restaurants from './components/Restaurants';
+import PopularRestaurants from './components/PopularRestaurants';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Welcome to SB Foods</h1>
+      <PopularRestaurants />
+      <Restaurants />
+    </div>
+  );
+};
+
+export default Home;
+
+
+---
+
+🔐 Login.jsx
+Here's a basic boilerplate code setup for the major components and pages in your Food Ordering System React project. This will help you scaffold the project quickly.
+
+
+---
+
+🔧 App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './Home';
+
+import Login from './components/Login';
+import Register from './components/Register';
+import Restaurants from './components/Restaurants';
+import PopularRestaurants from './components/PopularRestaurants';
+
+import Admin from './pages/admin/Admin';
+import AllOrders from './pages/admin/AllOrders';
+import AllProducts from './pages/admin/AllProducts';
+import AllRestaurants from './pages/admin/AllRestaurants';
+import AllUsers from './pages/admin/AllUsers';
+
+import Cart from './pages/customer/Cart';
+import CategoryProducts from './pages/customer/CategoryProducts';
+import IndividualRestaurant from './pages/customer/IndividualRestaurant';
+import Profile from './pages/customer/Profile';
+
+import EditProduct from './pages/restaurant/EditProduct';
+import NewProduct from './pages/restaurant/NewProduct';
+import RestaurantHome from './pages/restaurant/RestaurantHome';
+import RestaurantMenu from './pages/restaurant/RestaurantMenu';
+import RestaurantOrders from './pages/restaurant/RestaurantOrders';
+import Authentication from './pages/restaurant/Authentication';
+
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        {/* Auth */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Admin */}
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/orders" element={<AllOrders />} />
+        <Route path="/admin/products" element={<AllProducts />} />
+        <Route path="/admin/restaurants" element={<AllRestaurants />} />
+        <Route path="/admin/users" element={<AllUsers />} />
+
+        {/* Customer */}
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/categories/:categoryId" element={<CategoryProducts />} />
+        <Route path="/restaurant/:id" element={<IndividualRestaurant />} />
+        <Route path="/profile" element={<Profile />} />
+
+        {/* Restaurant */}
+        <Route path="/restaurant/home" element={<RestaurantHome />} />
+        <Route path="/restaurant/menu" element={<RestaurantMenu />} />
+        <Route path="/restaurant/orders" element={<RestaurantOrders />} />
+        <Route path="/restaurant/edit-product/:id" element={<EditProduct />} />
+        <Route path="/restaurant/new-product" element={<NewProduct />} />
+        <Route path="/restaurant/auth" element={<Authentication />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
+
+
+---
+
+🌟 Sample Component: Navbar.jsx
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
+  return (
+    <nav>
+      <h2>SB Foods</h2>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/restaurants">Restaurants</Link></li>
+        <li><Link to="/cart">Cart</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+---
+
+🏠 Home.jsx
+
+import React from 'react';
+import Restaurants from './components/Restaurants';
+import PopularRestaurants from './components/PopularRestaurants';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Welcome to SB Foods</h1>
+      <PopularRestaurants />
+      <Restaurants />
+    </div>
+  );
+};
+
+export default Home;
+
+
+---
+
+🔐 Login.jsx
+
+import React from 'react';
+
+const Login = () => {
+  return (
+    <div>
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;
+
+
+---
+
+📦 You can use this format for each page:
+
+// AllOrders.jsx
+import React from 'react';
+
+const AllOrders = () => {
+  return (
+    <div>
+      <h2>All Orders (Admin View)</h2>
+    </div>
+  );
+};
+
+export default AllOrders;
+
+
+---
+
+Let me know if you want me to generate code for all components/pages in this structure or a downloadable zip or PDF with full code.
+import React from 'react';
+
+const Login = () => {
+  return (
+    <div>
+      <h2>Login</h2>
+      <form>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;
+
+
+---
+
+📦 You can use this format for each page:
+
+// AllOrders.jsx
+import React from 'react';
+
+const AllOrders = () => {
+  return (
+    <div>
+      <h2>All Orders (Admin View)</h2>
+    </div>
+  );
+};
+
+export default AllOrders;
+
+
+---
+
+Let me know if you want me to generate code for all components/pages in this structure or a downloadable zip or PDF with full code
